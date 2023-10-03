@@ -1,0 +1,27 @@
+.carousel {
+      width: auto;
+      height: 25vw;
+      margin: 0 auto; 
+      border-radius: 10px;
+}
+.carouselBox{
+      margin: 0px 1vw;
+}
+.carouselImage{
+      margin: 0;
+      width: 100vw;
+      height: 25vw;
+      border-radius: 15px;
+}
+.carouselmt{
+      padding: 5px;
+      margin: 5px;
+}
+
+@media screen and (max-width: 576px) {
+      .carouselHeading{
+            font-size: 0.7rem;
+      }
+}
+  
+    
