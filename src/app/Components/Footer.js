@@ -34,7 +34,7 @@ const Footer = () => {
 
       return (
             <>
-                  <footer className="foot bg-gray-900 text-white rounded-t-3xl">
+                  <footer className="foot bg-[#111111] text-slate-50 tracking-wider font-sans">
                         <div className="flex flex-row justify-end">
                               <div className="date p-2 py-4 font-mono font-light">
                                     Date:{formattedDate}
@@ -54,16 +54,16 @@ const Footer = () => {
                               </div>
                               <div className="context p-2 lg:w-96 lg:p-4">
                                     <h1 className="font-serif text-xl pb-2 text-center lg:text-2xl lg:font-medium"> THE TIMES OF VNRVJIET </h1>
-                                    <p className="font-serif text-sm px-4 text-justify sm:px-40 md:px-52 lg:px-4 lg:text-lg lg:font-thin">The Journalism Club seeks to empower and inspire students to develop their critical thinking and communication skills.</p>
+                                    <p className="font-serif text-sm px-4 text-justify sm:px-40 md:px-52 lg:px-4 lg:text-lg lg:font-normal text-slate-200">The Journalism Club seeks to empower and inspire students to develop their critical thinking and communication skills.</p>
                               </div>
                               <div className="impLinks p-4 pb-4 font-sans self-center text-center lg:w-80 lg:self-start lg:pl-16">
                                     <h1 className="text-2xl pb-2 lg:font-medium lg:flex lg:pb-4">Important Links</h1>
-                                    <ul className="Links text-xs space-y-2 lg:text-base lg:space-y-4 lg:flex lg:flex-col lg:items-start">
-                                          <li className="hover:scale-105 hover:font-medium"><Link href="/about">About Us</Link></li>
-                                          <li className="hover:scale-105 hover:font-medium"><Link href="#">Acceptable Use Policy</Link></li>
-                                          <li className="hover:scale-105 hover:font-medium"><Link href="#">DISCLAIMER</Link></li>
-                                          <li className="hover:scale-105 hover:font-medium"><Link href="#">PRIVACY NOTICE</Link></li>
-                                          <li className="hover:scale-105 hover:font-medium"><Link href="#">TERMS OF USE</Link></li>
+                                    <ul className="Links text-xs space-y-2 lg:text-base lg:space-y-4 lg:flex lg:flex-col lg:items-start text-slate-200">
+                                          <li key={'11'} className=""><Link href="/about">About Us</Link></li>
+                                          <li key={'21'} className=""><Link href="#">Acceptable Use Policy</Link></li>
+                                          <li key={'41'} className=""><Link href="#">DISCLAIMER</Link></li>
+                                          <li key={'51'} className=""><Link href="#">PRIVACY NOTICE</Link></li>
+                                          <li key={'61'} className=""><Link href="#">TERMS OF USE</Link></li>
                                     </ul>
                               </div>
                               {/*this newsLetter is temp , it may need backend to function*/}
@@ -85,16 +85,16 @@ const Footer = () => {
                               <h1 className="text-md font-semibold pb-2">Follow Us</h1>
                               <Link href='https://www.youtube.com' target='_blank' >
                                     <ul className="connectLinks flex flex-row space-x-5">
-                                          <li title="facebook" className="hover:scale-110">
+                                          <li key={'facebook'} title="facebook" className="hover:scale-110">
                                                 <FaFacebook alt="facebook" />
                                           </li>
-                                          <li title="instagram" className="hover:scale-110">
+                                          <li key={'instagram'} title="instagram" className="hover:scale-110">
                                                 <FaInstagram alt="instagram" />
                                           </li>
-                                          <li title="linkedin" className="hover:scale-110">
+                                          <li  key={'linkedin'} title="linkedin" className="hover:scale-110">
                                                 <FaLinkedin alt="linkedin" />
                                           </li>
-                                          <li title="Gmail" className="hover:scale-110">
+                                          <li key={'Gmail'}  title="Gmail" className="hover:scale-110">
                                                 <BiLogoGmail alt="Gmail" />
                                           </li>
                                     </ul>

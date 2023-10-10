@@ -1,6 +1,6 @@
 export const carouselData = [{
       id: 1,
-      imgURL: '/Footerimages/facebook.png',
+      imgURL: '/Carouselimages/sample.jpg',
       description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
       externalLink: 'https://vnrvjiet.ac.in',
 },
@@ -48,7 +48,7 @@ export const carouselData = [{
       description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
       externalLink: 'https://vnrvjiet.ac.in',
 },{
-      id: 9,
+      id: 19,
       imgURL: '/Carouselimages/sample.jpg',
       description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
       externalLink: 'https://vnrvjiet.ac.in',

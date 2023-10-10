@@ -19,10 +19,10 @@ const CarouselComponent = () => {
 
 
       return (
-            <>
-                  <h2 className='carouselHeading font-semibold p-2 lg:p-4 font-serif text-2xl'>TOP STORIES</h2>
-                  <Carousel  centerMode centerSlidePercentage={60} showIndicators={false} stopOnHover={true} showArrows={true}  infiniteLoop autoPlay transitionTime={500} showThumbs={false} showStatus={false} swipeable={true} useKeyboardArrows>
-                        {images.map((image, index) => (
+            <>    <section className='bg-slate-100 shadow-inner pb-2'>
+                  <h2 className='carouselHeading text-lg font-bold tracking-wide p-2 md:p-4 lg:px-6 font-sans lg:text-3xl'>Bulletin Board</h2>
+                  <Carousel centerMode centerSlidePercentage={90} showIndicators={false} stopOnHover={true} showArrows={true}  infiniteLoop autoPlay transitionTime={500} showThumbs={false} showStatus={false} swipeable={true} useKeyboardArrows>
+                        {images.map((image,index) => (
                               <Link href={image.externalLink} target='_blank'>
                               <div key={index} className='carouselBox'>
                                     <Image
@@ -37,6 +37,7 @@ const CarouselComponent = () => {
                         ))}
                   </Carousel>
                   <div className='carouselmt'></div>
+                  </section>
             </>
       )
 }

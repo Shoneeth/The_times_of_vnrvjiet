@@ -1,7 +1,7 @@
 export const articleData = [
       {
             id: 1,
-            title: 'this article title should have not more than 10 words',
+            title: 'this article title should have not more than 10 words ',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/download.jpeg',
             author: 'asdfgh',

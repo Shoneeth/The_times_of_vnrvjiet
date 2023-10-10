@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="nav shadow-lg">
+      <nav className="nav shadow-md bg-white">
         <div className="menu p-4 absolute">
           <CgClose className={`w-6 h-6 text-gray-400 font-bold cursor-pointer lg:relative lg:left-10 lg:top-7 lg:w-9 lg:h-9 ${toggle ? '' : 'hidden'}`} title="close" onClick={handleOnClick} />
           <CgMenu className={`w-6 h-6 text-gray-400 font-bold cursor-pointer lg:relative lg:left-10 lg:top-7 lg:w-9 lg:h-9 ${toggle ? 'hidden' : ''}`} alt="Picture of the menu" onClick={handleOnClick} title="Menu" />
@@ -54,22 +54,22 @@ const Navbar = () => {
           </div>
           <div className="links p-2">
             <ul className="connectLinks flex flex-row space-x-3">
-              <li title="facebook" className="hover:scale-110">
+              <li key={'facebook'} title="facebook" className="hover:scale-110">
                 <Link href="#">
                   <FaFacebook alt="facebook" />
                 </Link>
               </li>
-              <li title="instagram" className="hover:scale-110">
+              <li  key={'instagram'} title="instagram" className="hover:scale-110">
                 <Link href="#">
                   <FaInstagram alt="instagram" />
                 </Link>
               </li>
-              <li title="linkedin" className="hover:scale-110">
+              <li  key={'linkedin'} title="linkedin" className="hover:scale-110">
                 <Link href="#">
                   <FaLinkedin alt="linkedin" />
                 </Link>
               </li>
-              <li title="X" className="hover:scale-110">
+              <li key={'X'} title="X" className="hover:scale-110">
                 <Link href="#">
                   <FaSquareXTwitter alt="X" />
                 </Link>

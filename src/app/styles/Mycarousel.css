@@ -1,21 +1,21 @@
 .carousel {
       width: auto;
-      height: 25vw;
+      height: 30vw;
       margin: 0 auto; 
-      border-radius: 10px;
+      border-radius: 0px;
 }
 .carouselBox{
-      margin: 0px 1vw;
+      margin: 0px 0.5vw;
 }
 .carouselImage{
       margin: 0;
       width: 100vw;
-      height: 25vw;
-      border-radius: 15px;
+      height: 30vw;
+      border-radius: 5px;
 }
 .carouselmt{
-      padding: 5px;
-      margin: 5px;
+      padding: 0px;
+      margin: 0px;
 }
 
 @media screen and (max-width: 576px) {
