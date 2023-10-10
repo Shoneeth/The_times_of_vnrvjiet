@@ -41,17 +41,17 @@ const TopStories = () => {
     <>
       <section className="bg-white pt-1 p-6 lg:pt-1 lg:pb-4">
        <h1 className="text-3xl font-sans font-bold ">Top Stories</h1>
-       <div className="flex flex-col justify-center py-2 relative">
+       <div className="flex flex-col justify-center py-2 relative md:flex-row md:flex-wrap">
             {articles.map((article, index) => (
               (index > 0 && index < 5) &&
               <div className="flex py-3 lg:py-1 items-center">
-                <div className=" flex items-center overflow-hidden w-32 h-24 rounded-[20%]">
+                <div className=" flex items-center overflow-hidden w-64 md:w-32 h-28 md:h-24 rounded-[20%]">
                   <Image
                     src={article.imgMainURL}
                     height={100}
                     width={500}
                     alt={article.title}
-                    className="object-cover h-24 transition duration-700 ease-in-out hover:scale-110"
+                    className="object-cover h-28 md:h-24 transition duration-700 ease-in-out hover:scale-110"
                   />
                 </div>
                 <div className="p-3 pl-5">
