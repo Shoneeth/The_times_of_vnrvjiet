@@ -66,7 +66,7 @@ const HotTopics = () => {
                 </div>
               </div>
             ))}
-            <div className="absolute -bottom-3 right-0"><Link href="#"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
+            <div className="absolute -bottom-3 right-0"><Link href="/articles"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
           </div>
       </section>
     </>

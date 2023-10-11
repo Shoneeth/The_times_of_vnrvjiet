@@ -1,4 +1,3 @@
-// make home responsive and git push 
-// make article category page
+// make article category page -- page no work left
 //make search page 
 //git push

@@ -44,7 +44,7 @@ const TopStories = () => {
        <div className="flex flex-col justify-center py-2 relative md:flex-row md:flex-wrap">
             {articles.map((article, index) => (
               (index > 0 && index < 5) &&
-              <div className="flex py-3 lg:py-1 items-center">
+              <div key={index} className="flex py-3 lg:py-1 items-center">
                 <div className=" flex items-center overflow-hidden w-64 md:w-32 h-28 md:h-24 rounded-[20%]">
                   <Image
                     src={article.imgMainURL}
@@ -67,7 +67,7 @@ const TopStories = () => {
                 </div>
               </div>
             ))}
-            <div className="absolute -bottom-3 right-0"><Link href="#"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
+            <div className="absolute -bottom-3 right-0"><Link href="/articles"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
           </div>
       </section>
     </>

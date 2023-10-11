@@ -4,7 +4,7 @@ export const articleData = [
             title: 'this article title should have not more than 10 words ',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/download.jpeg',
-            author: 'asdfgh',
+            author: 'asdfghasdfghjk',
             uploadedBy: 'asdferdfv',
             likes: 500,
             Category: 'Academics',
@@ -24,7 +24,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 3,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -36,7 +36,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 4,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -48,7 +48,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 5,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -60,7 +60,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 6,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -72,7 +72,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 7,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -84,7 +84,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 8,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -96,7 +96,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 9,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -108,7 +108,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 10,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -120,7 +120,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 11,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -132,7 +132,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 12,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -144,7 +144,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 13,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -156,7 +156,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 14,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -168,7 +168,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 15,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -180,7 +180,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 16,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -192,7 +192,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 17,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -205,7 +205,7 @@ export const articleData = [
       },
 
       {
-            id: 1,
+            id: 18,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -217,7 +217,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 19,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -229,7 +229,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 20,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',
@@ -241,7 +241,7 @@ export const articleData = [
             feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
       },
       {
-            id: 1,
+            id: 21,
             title: 'this article title should have not more than 10 words',
             imgMainURL: '/Carouselimages/sample.jpg',
             imgSmURL: '/articleImages/sampleMini.png',

@@ -1,8 +1,11 @@
 
 
-export default function Home() {
+const page = () => {
   return (
     <>
+      
     </>
   )
 }
+
+export default page

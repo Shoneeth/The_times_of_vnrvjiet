@@ -39,7 +39,7 @@ const Footer = () => {
                               <div className="date p-2 py-4 font-mono font-light">
                                     Date:{formattedDate}
                               </div>
-                              <div className="upscroll p-2 py-4 hover:scale-125 lg:p-4">
+                              <div className="upscroll p-2 py-4 hover:scale-110">
                                     <CgArrowUpO className="w-6 h-6" onClick={handleScrollUp}/>
                               </div>
                         </div>

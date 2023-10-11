@@ -3,7 +3,7 @@
 const page = () => {
   return (
     <>
-      <h1>this is about us page</h1>
+      <h1>this dynamic route</h1>
     </>
   )
 }
