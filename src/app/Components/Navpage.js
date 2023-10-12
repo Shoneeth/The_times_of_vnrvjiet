@@ -28,7 +28,7 @@ const Navpage = () => {
       </ul>
       <div className="flex items-center justify-center border-2 border-solid rounded-lg px-2 py-0 m-3">
         <input className="hidden px-3 py-1 lg:block" type='search' placeholder="search" onChange={handleChange} />
-        <Link href={`/search?search=${inputValue}`} >
+        <Link href={`/search?search=${inputValue}&page=1`} >
           <div className="px-2 hover:scale-125 lg:border-l-2" onClick={handleClick}>
             <GoSearch />
           </div>

@@ -38,7 +38,7 @@ const Latest = () => {
 
   return (
     <>
-      <section className="bg-white p-4 lg:p-6 lg:w-[65vw]">
+      <section className="bg-white p-4 lg:p-6 lg:w-[68vw]">
         <h1 className="text-xl tracking-wide lg:text-3xl font-sans font-bold">Latest News</h1>
         <div className="flex flex-col lg:flex-row items-center">
           <div className=" overflow-hidden rounded-md relative my-4 w-[90vw] h-[50vw] md:h-[40vw] lg:w-[35vw] lg:h-[30vw]">
@@ -65,7 +65,7 @@ const Latest = () => {
           <div className="flex flex-col items-center justify-center pl-2 md:pl-6 py-6 gap-6 md:gap-12 relative">
             {articles.map((article, index) => (
               (index > 0 && index < 4) &&
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap lg:flex-nowrap">
                 <div className="overflow-hidden rounded-md w-44 h-24 md:w-56 md:h-28">
                   <Image
                     src={article.imgMainURL}
