@@ -67,7 +67,7 @@ const Footer = () => {
                                     </ul>
                               </div>
                               {/*this newsLetter is temp , it may need backend to function*/}
-                              <div className="newsLetter font-sans p-8 lg:w-96 lg:p-4">
+                              <div className="newsLetter font-sans p-8 w-[90vw] lg:w-96 lg:p-4">
                                     <h1 className="text-2xl font-semibold text-center py-4 lg:py-0 lg:pb-4">Subscribe For Newsletter</h1>
                                     <form className="NL text-black bg-white rounded-2xl p-4 lg:p-8" onSubmit={handleSubmit}>
                                           <h1 className="text-center font-bold text-xl pb-4">Join The Newsletter</h1>

@@ -39,9 +39,9 @@ const TopStories = () => {
 
   return (
     <>
-      <section className="bg-white pt-1 p-6 lg:pt-1 lg:pb-4">
+      <section className="bg-white pt-1 p-6 lg:pt-1 lg:pb-4 lg:w-[30vw]">
        <h1 className="text-3xl font-sans font-bold ">Top Stories</h1>
-       <div className="flex flex-col justify-center py-2 relative md:flex-row md:flex-wrap">
+       <div className="flex flex-col justify-center py-2 relative md:flex-row  md:flex-wrap">
             {articles.map((article, index) => (
               (index > 0 && index < 5) &&
               <div key={index} className="flex py-3 lg:py-1 items-center">
