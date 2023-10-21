@@ -3,13 +3,14 @@ export const articleData = [
             id: 1,
             title: 'this article title should have not more than 10 words ',
             imgMainURL: '/Carouselimages/sample.jpg',
-            imgSmURL: '/articleImages/download.jpeg',
+            imgSmURL: 'thiss is image discrietion',
+            imgCredits:'uhdghsj',
             author: 'asdfghasdfghjk',
             uploadedBy: 'asdferdfv',
             likes: 500,
             Category: 'Academics',
             date: '12/05/2021',
-            feedback: 'asdfghsxcynskjhgfsjgbncjhbknbjhgbjfjh'
+            feedback: '<P>The Indian Space Research Organisation (ISRO) on October 21 held the launch of Gaganyaans first Flight Test Vehicle Abort Mission-1 (TV-D1) five seconds before lift off from the Satish Dhawan Space Centre in Sriharikota. However, the reason for the launch hold was identified and corrected, ISRO said. The launch is now planned at 10 a.m.The TV-D1 flight which was to demonstrate the performance of the Crew Escape System (CES) was scheduled to lift off at 8 a.m, however it was rescheduled for 8.30 am.At 8.30 a.m. the mission director initiated the automatic launch sequence with the lift off again rescheduled at 8.45 a.m. But five seconds before liftoff the launch was called off.ISRO Chairman S. Somanath said that the onboard computer withheld the launch in view of an anomaly observed. “The engine ignition has to happen in the nominal course. We have to find out what went wrong with that. We will come back soon after analysing what has triggered the automatic launch sequence holding the vehicle. So what has happened is the onboard computer which is doing the function has withheld the launch in view of the anomaly observed,” Mr. Somanath said.He added that the launch vehicle is safe and that ISRO will study and analyse anomalies.“The launch vehicle is safe. We will have to reach the vehicle and look at what has happened. We will find out and understand the anomaly and schedule the launch very soon,” he added.Mr. Somanath said that the new date for the launch will be announced later after the analysis is completed.<p>'
       },
       {
             id: 2,

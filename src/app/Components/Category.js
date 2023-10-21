@@ -33,7 +33,7 @@ const Category = () => {
       return (
             <>
                   <section className="p-4 lg:ml-4 lg:mb-4 lg:p-4">
-                        <Link href="/articles"><h1 className="text-3xl font-sans font-bold w-min hover:underline">Categories</h1></Link>
+                        <Link href="/articles?category=Academics&page=1"><h1 className="text-3xl font-sans font-bold w-min hover:underline">Categories</h1></Link>
                         <div className="flex flex-wrap gap-4 p-4 px-6">
                               {Categories.map((category,index)=>(
                                     <Link href={`/articles?category=${category}&page=1`}>

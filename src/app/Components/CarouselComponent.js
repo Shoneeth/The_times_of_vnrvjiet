@@ -19,9 +19,9 @@ const CarouselComponent = () => {
 
 
       return (
-            <>    <section className='bg-slate-100 shadow-inner pb-2'>
+            <>    <section className='pb-2'>
                   <h2 className='carouselHeading text-lg font-bold tracking-wide p-2 md:p-4 lg:px-6 font-sans lg:text-3xl'>Bulletin Board</h2>
-                  <Carousel centerMode centerSlidePercentage={90} showIndicators={false} stopOnHover={true} showArrows={true}  infiniteLoop autoPlay transitionTime={500} showThumbs={false} showStatus={false} swipeable={true} useKeyboardArrows>
+                  <Carousel centerMode centerSlidePercentage={90} showIndicators={true} stopOnHover={true} showArrows={true}  infiniteLoop autoPlay transitionTime={500} showThumbs={false} showStatus={false} swipeable={true} useKeyboardArrows>
                         {images.map((image,index) => (
                               <Link href={image.externalLink} target='_blank'>
                               <div key={index} className='carouselBox'>

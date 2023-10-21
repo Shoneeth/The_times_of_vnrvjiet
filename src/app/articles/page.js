@@ -4,6 +4,8 @@ import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import ArticleCard from '../Components/ArticleCard';
 import { articleData } from '../allDataFiles/articleData';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const page = () => {
   const Params = useSearchParams()
@@ -51,7 +53,8 @@ const page = () => {
 
   return (
     <>
-      <section className="bg-slate-50 p-4">
+    <Navbar/>
+      <section className="p-4 ">
         <div className="p-6 text-2xl md:text-3xl lg:text-4xl text-center font-bold font-sans capitalize tracking-wider hover:underline">Categories of Articles</div>
         <div className="flex justify-evenly flex-wrap gap-4 bg-gray-200 border-gray-500 border-y  p-2 shadow-md">
           {
@@ -64,7 +67,7 @@ const page = () => {
         {
           articleData.map(
             (currArticle) => (
-              <ArticleCard key={currArticle.id} {...currArticle} />
+              <ArticleCard key={currArticle.id} {...{...currArticle,totalData}}/>
             )
           )
         }
@@ -89,6 +92,7 @@ const page = () => {
           }
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

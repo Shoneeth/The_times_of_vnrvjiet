@@ -30,11 +30,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="nav shadow-md bg-white">
+      <nav className="nav shadow-lg bg-white">
         <div className="menu p-4 absolute">
           <CgClose className={`w-6 h-6 text-gray-400 font-bold cursor-pointer lg:relative lg:left-10 lg:top-7 lg:w-9 lg:h-9 ${toggle ? '' : 'hidden'}`} title="close" onClick={handleOnClick} />
           <CgMenu className={`w-6 h-6 text-gray-400 font-bold cursor-pointer lg:relative lg:left-10 lg:top-7 lg:w-9 lg:h-9 ${toggle ? 'hidden' : ''}`} alt="Picture of the menu" onClick={handleOnClick} title="Menu" />
         </div>
+        <Link href='/home'>
         <div className=" flex flex-col items-center lg:flex-row lg:justify-center">
           <div className="logo w-16 p-2 lg:w-24">
             <Image
@@ -48,6 +49,7 @@ const Navbar = () => {
             THE TIMES OF VNRVJIET
           </div>
         </div>
+        </Link>
         <div className="flex flex-col items-center justify-center lg:right-[25vw] lg:relative lg:bottom-4 lg:items-end">
           <div className="date text-xs font-mono font-semibold text-red-800 bg-white p-1">
             Date: {formattedDate} / {`${days[date.getDay()]}`}

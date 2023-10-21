@@ -4,9 +4,19 @@ import Link from "next/link"
 import { articleData } from "../allDataFiles/articleData"
 import { BiCalendar } from "react-icons/bi";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getArticle } from "../redux/slice";
 
 const HotTopics = () => {
       const [articles, setArticles] = useState([])
+
+      
+  const dispatch = useDispatch();
+
+  const articleDispatch =(article)=>{
+        dispatch(getArticle(article))
+  }
+
   useEffect(() => {
     // console.log(carouselData);
     setArticles(articleData);
@@ -41,7 +51,7 @@ const HotTopics = () => {
       <h1 className="text-xl tracking-wide lg:text-3xl font-sans font-bold">Hot Topics</h1>
       <div className="flex justify-center py-6 items-center relative gap-3 lg:gap-4 flex-wrap">
             {articles.map((article, index) => (
-              (index > 0 && index < 5) &&
+              (index >= 0 && index < 4) &&
               <div className="flex flex-col justify-center items-center md:w-44 lg:w-52">
                 <div className="overflow-hidden rounded-md w-70 h-40 md:w-44 lg:w-52 md:h-32">
                   <Image
@@ -56,11 +66,11 @@ const HotTopics = () => {
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
                 ${getClass(article.Category)}
                 }`}>{article.Category}</span>
-                  <Link href="#">
-                    <h1 className="text-sm lg:text-base font-sans capitalize text-black font-bold py-2 hover:underline">{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
+                  <Link href={`/articles/${article.id}?title=${article.title}`}>
+                    <h1 className="text-sm lg:text-base font-sans capitalize text-black font-bold py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
                   <div className="flex items-center gap-2 px-1 lg:gap-4 lg:px-2">
-                    <p className="text-gray-500 font-medium text-xs font-sans">BY <span className="text-black uppercase">{article.author}</span></p>
+                    <p className="text-gray-500 font-medium text-xs font-sans">BY <span className="text-black uppercase">{`${article.author.substring(0,6)}${article.author.length>6 ? '...' : ''}`}</span></p>
                     <div className="flex items-center gap-2 text-gray-500 font-sans font-medium text-xs"><BiCalendar />{article.date}</div>
                   </div>
                 </div>

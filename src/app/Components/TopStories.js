@@ -4,6 +4,10 @@ import Link from "next/link"
 import { articleData } from "../allDataFiles/articleData"
 import { BiCalendar } from "react-icons/bi";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getArticle } from "../redux/slice";
+
+
 
 const TopStories = () => {
       const [articles, setArticles] = useState([])
@@ -12,6 +16,12 @@ const TopStories = () => {
         setArticles(articleData);
       }, []);
 
+      const dispatch = useDispatch();
+
+      const articleDispatch =(article)=>{
+            dispatch(getArticle(article))
+      }
+    
       const getClass = (key) => {
 
             switch (key) {
@@ -43,7 +53,7 @@ const TopStories = () => {
        <h1 className="text-3xl font-sans font-bold ">Top Stories</h1>
        <div className="flex flex-col justify-center py-2 relative md:flex-row  md:flex-wrap">
             {articles.map((article, index) => (
-              (index > 0 && index < 5) &&
+              (index >= 0 && index < 4) &&
               <div key={index} className="flex py-3 lg:py-1 items-center">
                 <div className=" flex items-center overflow-hidden w-64 md:w-32 h-28 md:h-24 rounded-[20%]">
                   <Image
@@ -58,8 +68,8 @@ const TopStories = () => {
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
                 ${getClass(article.Category)}
             `}>{article.Category}</span>
-                  <Link href="#">
-                    <h1 className="text-sm font-sans capitalize text-black font-bold py-2 hover:underline">{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
+                  <Link href={`/articles/${article.id}?title=${article.title}`}>
+                    <h1 className="text-sm font-sans capitalize text-black font-bold py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
                   <div className="flex items-center gap-4 px-2">
                     <div className="flex items-center gap-2 text-gray-500 font-sans font-semibold text-xs"><BiCalendar />{article.date}</div>

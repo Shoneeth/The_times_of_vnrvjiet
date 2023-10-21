@@ -59,11 +59,11 @@ const Footer = () => {
                               <div className="impLinks p-4 pb-4 font-sans self-center text-center lg:w-80 lg:self-start lg:pl-16">
                                     <h1 className="text-2xl pb-2 lg:font-medium lg:flex lg:pb-4">Important Links</h1>
                                     <ul className="Links text-xs space-y-2 lg:text-base lg:space-y-4 lg:flex lg:flex-col lg:items-start text-slate-200">
-                                          <li key={'11'} className=""><Link href="/about">About Us</Link></li>
-                                          <li key={'21'} className=""><Link href="#">Acceptable Use Policy</Link></li>
-                                          <li key={'41'} className=""><Link href="#">DISCLAIMER</Link></li>
-                                          <li key={'51'} className=""><Link href="#">PRIVACY NOTICE</Link></li>
-                                          <li key={'61'} className=""><Link href="#">TERMS OF USE</Link></li>
+                                          <li key={'11'} className="hover:underline hover:ease-in-out"><Link href="/about">About Us</Link></li>
+                                          <li key={'21'} className="hover:underline hover:ease-in-out"><Link href="#">Acceptable Use Policy</Link></li>
+                                          <li key={'41'} className="hover:underline hover:ease-in-out"><Link href="#">DISCLAIMER</Link></li>
+                                          <li key={'51'} className="hover:underline hover:ease-in-out"><Link href="#">PRIVACY NOTICE</Link></li>
+                                          <li key={'61'} className="hover:underline hover:ease-in-out"><Link href="#">TERMS OF USE</Link></li>
                                     </ul>
                               </div>
                               {/*this newsLetter is temp , it may need backend to function*/}
@@ -83,22 +83,28 @@ const Footer = () => {
                         </div>
                         <div className="contacts flex flex-col items-center p-6">
                               <h1 className="text-md font-semibold pb-2">Follow Us</h1>
-                              <Link href='https://www.youtube.com' target='_blank' >
                                     <ul className="connectLinks flex flex-row space-x-5">
                                           <li key={'facebook'} title="facebook" className="hover:scale-110">
+                                                <Link href='https://www.youtube.com' target='_blank' >
                                                 <FaFacebook alt="facebook" />
+                                                </Link>
                                           </li>
                                           <li key={'instagram'} title="instagram" className="hover:scale-110">
+                                                <Link href='https://www.youtube.com' target='_blank' >
                                                 <FaInstagram alt="instagram" />
+                                                </Link>
                                           </li>
                                           <li  key={'linkedin'} title="linkedin" className="hover:scale-110">
+                                                <Link href='https://www.youtube.com' target='_blank' >
                                                 <FaLinkedin alt="linkedin" />
+                                                </Link>
                                           </li>
                                           <li key={'Gmail'}  title="Gmail" className="hover:scale-110">
+                                                <Link href='https://www.youtube.com' target='_blank' >
                                                 <BiLogoGmail alt="Gmail" />
+                                                </Link>
                                           </li>
                                     </ul>
-                              </Link>
                         </div>
                         <hr className="h-px  border-0 bg-gray-700"></hr>
                         <div className="trems">

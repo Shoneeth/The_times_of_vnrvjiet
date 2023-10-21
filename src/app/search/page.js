@@ -1,6 +1,10 @@
 'use client'
 import { useState,useEffect } from "react";
 import { useSearchParams,useRouter } from "next/navigation";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import underDev from "@/app/search/underDev.json"
+import Lottie from "lottie-react"
 
 const page = () => {
 
@@ -35,6 +39,7 @@ const page = () => {
 
   return (
     <> 
+    <Navbar/>
     <div className="p-6">
       <form  onSubmit={handleSubmit}>
         <label className="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
@@ -49,6 +54,10 @@ const page = () => {
         </div>
       </form>
       </div>
+      <div className="flex justify-center">
+      <Lottie animationData={underDev} loop={true} />
+      </div>
+      <Footer/>
     </>
   )
 }
