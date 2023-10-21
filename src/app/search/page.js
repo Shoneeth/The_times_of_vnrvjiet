@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 import { useSearchParams,useRouter } from "next/navigation";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import underDev from "@/app/search/underDev.json"
+import underDev from "@/app/underDev.json"
 import Lottie from "lottie-react"
 
 const page = () => {

@@ -60,10 +60,10 @@ const Footer = () => {
                                     <h1 className="text-2xl pb-2 lg:font-medium lg:flex lg:pb-4">Important Links</h1>
                                     <ul className="Links text-xs space-y-2 lg:text-base lg:space-y-4 lg:flex lg:flex-col lg:items-start text-slate-200">
                                           <li key={'11'} className="hover:underline hover:ease-in-out"><Link href="/about">About Us</Link></li>
-                                          <li key={'21'} className="hover:underline hover:ease-in-out"><Link href="#">Acceptable Use Policy</Link></li>
-                                          <li key={'41'} className="hover:underline hover:ease-in-out"><Link href="#">DISCLAIMER</Link></li>
-                                          <li key={'51'} className="hover:underline hover:ease-in-out"><Link href="#">PRIVACY NOTICE</Link></li>
-                                          <li key={'61'} className="hover:underline hover:ease-in-out"><Link href="#">TERMS OF USE</Link></li>
+                                          <li key={'21'} className="hover:underline hover:ease-in-out"><Link href="/terms/acceptableUsePolicy">Acceptable Use Policy</Link></li>
+                                          <li key={'41'} className="hover:underline hover:ease-in-out"><Link href="/terms/disclaimer">DISCLAIMER</Link></li>
+                                          <li key={'51'} className="hover:underline hover:ease-in-out"><Link href="/terms/privacynotice">PRIVACY NOTICE</Link></li>
+                                          <li key={'61'} className="hover:underline hover:ease-in-out"><Link href="/terms/termsofuse">TERMS OF USE</Link></li>
                                     </ul>
                               </div>
                               {/*this newsLetter is temp , it may need backend to function*/}
