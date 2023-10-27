@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { articleData } from "../allDataFiles/articleData"
+// import { articleData } from "../allDataFiles/articleData"
 import { BiCalendar } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -11,9 +11,16 @@ import { getArticle } from "../redux/slice";
 
 const TopStories = () => {
       const [articles, setArticles] = useState([])
+
+      const getData= async()=>{
+        let response =  await fetch(`http://192.168.137.92:8080/diurnalis/hottopics`);
+        setArticles(await response.json());
+      }
+    
       useEffect(() => {
         // console.log(carouselData);
-        setArticles(articleData);
+        getData()
+        // setArticles(articleData);
       }, []);
 
       const dispatch = useDispatch();
@@ -52,12 +59,13 @@ const TopStories = () => {
       <section className="bg-white pt-1 p-6 lg:pt-1 lg:pb-4 lg:w-[30vw]">
        <h1 className="text-3xl font-sans font-bold ">Top Stories</h1>
        <div className="flex flex-col justify-center py-2 relative md:flex-row  md:flex-wrap">
-            {articles.map((article, index) => (
+            {articles.length>0?
+            articles.map((article, index) => (
               (index >= 0 && index < 4) &&
               <div key={index} className="flex py-3 lg:py-1 items-center">
                 <div className=" flex items-center overflow-hidden w-64 md:w-32 h-28 md:h-24 rounded-[20%]">
                   <Image
-                    src={article.imgMainURL}
+                    src={article.img}
                     height={100}
                     width={500}
                     alt={article.title}
@@ -66,8 +74,8 @@ const TopStories = () => {
                 </div>
                 <div className="p-3 pl-5">
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
-                ${getClass(article.Category)}
-            `}>{article.Category}</span>
+                ${getClass(article.category)}
+            `}>{article.category}</span>
                   <Link href={`/articles/${article.id}?title=${article.title}`}>
                     <h1 className="text-sm font-sans capitalize text-black font-bold py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
@@ -76,8 +84,8 @@ const TopStories = () => {
                   </div>
                 </div>
               </div>
-            ))}
-            <div className="absolute -bottom-3 right-0"><Link href="/articles"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
+            )):<div className="text-2xl p-8 font-bold font-sans">No Articles here ...</div>}
+            <div className="absolute -bottom-3 right-0"><Link href="/articles?category=Academics&page=1"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
           </div>
       </section>
     </>

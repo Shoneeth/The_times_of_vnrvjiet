@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { articleData } from "../allDataFiles/articleData"
+// import { articles } from "../allDataFiles/articleData"
 import { BiCalendar } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -9,6 +9,12 @@ import { getArticle } from "../redux/slice";
 
 const Latest = () => {
   const [articles, setArticles] = useState([])
+
+  const getData= async()=>{
+    let response =  await fetch(`http://192.168.137.92:8080/diurnalis/latestarticles`);
+    setArticles(await response.json());
+  }
+
 
   const dispatch = useDispatch();
 
@@ -18,7 +24,9 @@ const Latest = () => {
 
   useEffect(() => {
     // console.log(carouselData);
-    setArticles(articleData);
+    
+    getData()
+    // setArticles(articleData);
   }, []);
 
   const getClass = (key) => {
@@ -47,47 +55,51 @@ const Latest = () => {
 
   return (
     <>
+   
       <section className="bg-white p-4 lg:p-6 lg:w-[68vw]">
         <h1 className="text-xl tracking-wide lg:text-3xl font-sans font-bold">Latest News</h1>
-        <div className="flex flex-col lg:flex-row items-center">
+       <div className="flex flex-col lg:flex-row items-center">
+       { articles.length>0?
           <div className=" overflow-hidden rounded-md relative my-4 w-[90vw] h-[50vw] md:h-[40vw] lg:w-[35vw] lg:h-[30vw]">
             <Image
-              src={articleData[0].imgMainURL}
+              src={articles[0].img}
               height={1500}
               width={1500}
-              alt={articleData[0].title}
+              alt={articles[0].title}
               className=" object-cover h-[50vw] md:h-[40vw] lg:h-[30vw] absolute transition duration-700 ease-in-out hover:scale-110"
             />
             <div className="absolute bottom-7 lg:bottom-12 px-6">
               <span className={`${" text-white px-2 py-1 rounded-md text-sm lg:text-base font-medium capitalize"}
-                ${getClass(articleData[0].Category)}
-                }`}>{articleData[0].Category}</span>
-              <Link href={`/articles/${articleData[0].id}?title=${articleData[0].title}`}>
-                <h1 className=" text-sm md:text-2xl font-sans capitalize text-white font-bold py-2 hover:underline" onClick={()=>articleDispatch(articleData[0])}>{`${articleData[0].title.substring(0,55)}${articleData[0].title.length>55 ? '...' : ''}`}</h1>
+                ${getClass(articles[0].category)}
+                }`}>{articles[0].category}</span>
+              <Link href={`/articles/${articles[0].id}?title=${articles[0].title}`}>
+                <h1 className=" text-sm md:text-2xl font-sans capitalize text-white font-bold py-2 hover:underline" onClick={()=>articleDispatch(articles[0])}>{`${articles[0].title.substring(0,55)}${articles[0].title.length>55 ? '...' : ''}`}</h1>
               </Link>
               <div className="flex items-center gap-4 px-2">
-                <p className="text-gray-300 font-medium text-xs font-sans">BY <span className="text-white uppercase">{`${articleData[0].author.substring(0,10)}${articleData[0].author.length>10 ? '...' : ''}`}</span></p>
-                <div className="flex items-center gap-2 text-gray-300 font-sans font-medium text-xs"><BiCalendar />{articleData[0].date}</div>
+                <p className="text-gray-300 font-medium text-xs font-sans">BY <span className="text-white uppercase">{`${articles[0].author.substring(0,10)}${articles[0].author.length>10 ? '...' : ''}`}</span></p>
+                <div className="flex items-center gap-2 text-gray-300 font-sans font-medium text-xs"><BiCalendar />{articles[0].date}</div>
               </div>
             </div>
           </div>
+    : <div className="text-2xl p-8 font-bold font-sans">No Articles here ...</div>}
           <div className="flex flex-col items-center justify-center pl-2 md:pl-6 py-6 gap-6 md:gap-12 relative">
-            {articles.map((article, index) => (
+            {articles.length>0?
+            articles.map((article, index) => (
               (index > 0 && index < 4) &&
-              <div className="flex flex-wrap justify-center lg:flex-nowrap">
-                <div className="overflow-hidden rounded-md w-44 h-24 md:w-56 md:h-28">
+              <div className="flex flex-wrap justify-center lg:flex-nowrap overflow-hidden">
+                <div className="overflow-hidden rounded-md p-4 md:p-0 w-fit h-fit md:w-56 md:h-28">
                   <Image
-                    src={article.imgMainURL}
+                    src={article.img}
                     height={100}
                     width={500}
                     alt={article.title}
-                    className="h-24 md:h-28 object-cover transition duration-700 ease-in-out hover:scale-110"
+                    className="h-40 md:h-28 object-cover transition duration-700 ease-in-out hover:scale-110"
                   />
                 </div>
                 <div className="pl-4 md:pl-6">
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
-                ${getClass(article.Category)}
-                }`}>{article.Category}</span>
+                ${getClass(article.category)}
+                }`}>{article.category}</span>
                   <Link href={`/articles/${article.id}?title=${article.title}`}>
                     <h1 className="text-sm md:text-base font-sans capitalize text-black font-bold px-2 md:px-0 py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
@@ -97,8 +109,8 @@ const Latest = () => {
                   </div>
                 </div>
               </div>
-            ))}
-            <div className="absolute -bottom-3 right-0"><Link href="/articles"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
+            )):<div className="text-2xl p-8 font-bold font-sans">No Articles here ...</div>}
+            <div className="absolute -bottom-3 right-0"><Link href="/articles?category=Academics&page=1"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
           </div>
         </div>
       </section>

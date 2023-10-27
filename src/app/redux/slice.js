@@ -1,4 +1,4 @@
-const { createSlice,nanoid } = require("@reduxjs/toolkit");
+const { createSlice} = require("@reduxjs/toolkit");
 
 const initialState={
    article:{}
@@ -9,10 +9,7 @@ const Slice = createSlice({
       initialState,
       reducers:{
             getArticle:(state,action)=>{
-                  const data = {
-                        id:nanoid(),
-                        currarticle:action.payload
-                  }
+                  const data = action.payload
                   state.article ={...data};
             }
       }

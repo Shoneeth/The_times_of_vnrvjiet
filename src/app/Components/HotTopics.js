@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { articleData } from "../allDataFiles/articleData"
+// import { articleData } from "../allDataFiles/articleData"
 import { BiCalendar } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -9,6 +9,12 @@ import { getArticle } from "../redux/slice";
 
 const HotTopics = () => {
       const [articles, setArticles] = useState([])
+
+      const getData= async()=>{
+        let response =  await fetch(`http://192.168.137.92:8080/diurnalis/hottopics`);
+        setArticles(await response.json());
+      }
+    
 
       
   const dispatch = useDispatch();
@@ -19,7 +25,8 @@ const HotTopics = () => {
 
   useEffect(() => {
     // console.log(carouselData);
-    setArticles(articleData);
+    getData()
+    // setArticles(articleData);
   }, []);
 
   const getClass = (key) => {
@@ -50,12 +57,14 @@ const HotTopics = () => {
       <section className="bg-orange-50 p-4 lg:ml-4 lg:mb-4 lg:p-4 rounded-xl lg:w-[65vw]">
       <h1 className="text-xl tracking-wide lg:text-3xl font-sans font-bold">Hot Topics</h1>
       <div className="flex justify-center py-6 items-center relative gap-3 lg:gap-4 flex-wrap">
-            {articles.map((article, index) => (
+            {articles.length >0 ?
+            
+            articles.map((article, index) => (
               (index >= 0 && index < 4) &&
               <div className="flex flex-col justify-center items-center md:w-44 lg:w-52">
                 <div className="overflow-hidden rounded-md w-70 h-40 md:w-44 lg:w-52 md:h-32">
                   <Image
-                    src={article.imgMainURL}
+                    src={article.img}
                     height={100}
                     width={500}
                     alt={article.title}
@@ -64,8 +73,8 @@ const HotTopics = () => {
                 </div>
                 <div className="px-3 py-4">
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
-                ${getClass(article.Category)}
-                }`}>{article.Category}</span>
+                ${getClass(article.category)}
+                }`}>{article.category}</span>
                   <Link href={`/articles/${article.id}?title=${article.title}`}>
                     <h1 className="text-sm lg:text-base font-sans capitalize text-black font-bold py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
@@ -75,8 +84,8 @@ const HotTopics = () => {
                   </div>
                 </div>
               </div>
-            ))}
-            <div className="absolute -bottom-3 right-0"><Link href="/articles"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
+            )):<div className="text-2xl p-8 font-bold font-sans">No Articles here ...</div>}
+            <div className="absolute -bottom-3 right-0"><Link href="/articles?category=Academics&page=1"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105">Read more --{`>`}</button></Link></div>
           </div>
       </section>
     </>

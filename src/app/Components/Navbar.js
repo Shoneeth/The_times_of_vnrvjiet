@@ -57,22 +57,22 @@ const Navbar = () => {
           <div className="links p-2">
             <ul className="connectLinks flex flex-row space-x-3">
               <li key={'facebook'} title="facebook" className="hover:scale-110">
-                <Link href="#">
+                <Link href="#" target='_blank'>
                   <FaFacebook alt="facebook" />
                 </Link>
               </li>
               <li  key={'instagram'} title="instagram" className="hover:scale-110">
-                <Link href="#">
+                <Link href="https://www.instagram.com/diurnalis.tjc" target='_blank'>
                   <FaInstagram alt="instagram" />
                 </Link>
               </li>
               <li  key={'linkedin'} title="linkedin" className="hover:scale-110">
-                <Link href="#">
+                <Link href="https://www.linkedin.com/company/diurnalis-tjc" target='_blank'>
                   <FaLinkedin alt="linkedin" />
                 </Link>
               </li>
               <li key={'X'} title="X" className="hover:scale-110">
-                <Link href="#">
+                <Link href="#" target='_blank'>
                   <FaSquareXTwitter alt="X" />
                 </Link>
               </li>

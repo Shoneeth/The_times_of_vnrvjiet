@@ -7,13 +7,27 @@ import { BiCalendar } from "react-icons/bi";
 import Image from 'next/image'
 import Link from 'next/link'
 import FollowUs from '@/app/Components/FollowUs'
+import { useEffect, useState } from 'react'
 
 const page = () => {
 
   const Params = useSearchParams()
-  // const pathname = usePathname()
+  const idParam = Params.get('id')
   const titleParam = Params.get('title')
-  const currArticle = useSelector((data)=>data.article)
+  const categoryParam = Params.get('category')
+  const [currArticle,setCurrArticle] = useState(useSelector((data)=>data.article))
+
+  const getData= async()=>{
+    console.log(currArticle);
+    let response =  await fetch(`http://192.168.137.92:8080/diurnalis/article?category=${categoryParam}&id=${idParam}`);
+    setCurrArticle(await response.json());
+    console.log(currArticle)
+  
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
 
   // console.log(currArticle);
 
@@ -22,7 +36,7 @@ const page = () => {
     const formEle = document.querySelector("form");
     const formData = new FormData(formEle);
     
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwwYGI5A7j2YUuUFNNyiNp5AbTcUmsTm5sQZ9AKEaOX_QKDcMC2YlpDbO4HLLbGN2fOnw/exec"
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzB-zzd0ll51a7xxaBscYoYm6CaIHk6-78BAlGZc_4jVRGWsa9AUV5Xjv21ZngMD0m5/exec"
 
     try{
     const response = await fetch(scriptURL, {
@@ -55,26 +69,26 @@ const page = () => {
       <Navbar/>
       <div className="flex flex-wrap">
       <div className="bg-white border shadow-lg m-4 md:m-10 lg:ml-16 lg:mt-16 p-6 lg:w-[60vw]">
-        <h1 className="text-lg md:text-3xl text-black font-bold font-sans md:tracking-wider uppercase hover:underline text-justify">{currArticle.currarticle.title}</h1>
-        <div className="flex items-center text-gray-500 gap-2 px-4 pt-2 text-sm font-medium"><BiCalendar/><p>{currArticle.currarticle.date}</p></div>
+        <h1 className="text-lg md:text-3xl text-black font-bold font-sans md:tracking-wider uppercase hover:underline text-justify">{currArticle.title}</h1>
+        <div className="flex items-center text-gray-500 gap-2 px-4 pt-2 text-sm font-medium"><BiCalendar/><p>{currArticle.date}</p></div>
         <div className="flex items-center justify-between text-sm font-sans font-medium capitalize text-gray-500">
-          <p className="px-4 py-3">by: {currArticle.currarticle.author}</p>
-          <p className="px-4 py-3">Editor: {currArticle.currarticle.uploadedBy}</p>
+          <p className="px-4 py-3">by: {currArticle.author}</p>
+          <p className="px-4 py-3">Editor: {currArticle.approvedBy}</p>
         </div>
         <div className="flex flex-col text-xs text-gray-400 capitalize text-center py-4">
         <div className="overflow-hidden">
-          <Image src={currArticle.currarticle.imgMainURL}
+          <Image src={currArticle.img}
           width={1500}
           height={1500}
-          alt={currArticle.currarticle.imgSmURL}
+          alt={currArticle.imgDesc}
           className='object-cover'
           />
         </div>
-          {`${currArticle.currarticle.imgSmURL} | Photo credits: ${currArticle.currarticle.imgCredits}`}
+          {`${currArticle.imgDesc} | Photo credits: ${currArticle.imgCredits}`}
         </div>
-        <div className="px-4 py-2 md:px-8 md:py-4 text-justify text-base md:text-lg" dangerouslySetInnerHTML={{__html:`${currArticle.currarticle.feedback}`}}>
+        <div className="px-4 py-2 md:px-8 md:py-4 text-justify text-base md:text-lg" dangerouslySetInnerHTML={{__html:`${currArticle.description}`}}>
         </div>
-        <div className="text-end"><Link href="/articles"><button className="px-4 py-2 font-mono text-red-900 hover:scale-105"> More Articles --{`>`}</button></Link></div>
+        <div className="text-end"><Link href={`/articles?category=${currArticle.category!==undefined?currArticle.category:'Academics'}&page=1`}><button className="px-4 py-2 font-mono text-red-900 hover:scale-105"> More Articles --{`>`}</button></Link></div>
       </div>
       <div className="w-full lg:my-14 lg:w-[30vw]">
         <FollowUs/>

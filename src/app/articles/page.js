@@ -1,9 +1,9 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState,axios } from 'react';
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import ArticleCard from '../Components/ArticleCard';
-import { articleData } from '../allDataFiles/articleData';
+// import { articleData } from '../allDataFiles/articleData';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
@@ -14,6 +14,23 @@ const page = () => {
   const categoryParam = Params.get('category')
   const pageParam = Params.get('page')
 
+  const [articleData,setArticleData] = useState([]);
+  const [totalData,setTotalData] = useState(0);
+
+  const getData= async()=>{
+    let response =  await fetch(`http://192.168.137.92:8080/diurnalis/articles?pageNum=${Number(pageParam)}&pageSize=${Number(dataPerPage)}&category=${categoryParam}`);
+    setArticleData(await response.json());
+
+    let total =  await fetch(`http://192.168.137.92:8080/diurnalis/totalsize?category=${categoryParam}`);
+    setTotalData(await total.json());
+  }
+
+
+  useEffect( ()=>{
+    getData()
+  },[categoryParam,pageParam])
+
+  
   const Categories = ['Academics', 'Alumni Connect', 'Campus Life', 'Career', 'Interviews', 'Sports', 'Lifestyle', 'Student Life'];
   const [selectedCategory, setSelectedCategory] = useState(categoryParam);
   const [currPage, setCurrPage] = useState(1)
@@ -24,16 +41,18 @@ const page = () => {
   }
 
   const handlePage = (page) => {
+    
     router.push(`/articles?category=${categoryParam}&page=${page}`)
     setCurrPage(page);
   }
 
   const handleNextPrev=(page)=>{
+
     router.push(`/articles?category=${categoryParam}&page=${page}`)
     setCurrPage(page);
   }
 
-  const totalData = articleData.length //50 
+  
   const dataPerPage = 9
   const totalPages = Math.ceil(totalData/dataPerPage)
   // console.log(categoryParam)
@@ -42,7 +61,7 @@ const page = () => {
     currPageNo = Number(pageParam)
   }
 
-  let offset = (currPage - 1) * dataPerPage
+  // let offset = (currPage - 1) * dataPerPage
 
   let pageNumbers = []
   for(let i= currPage -3 ; i<=currPage+3 ;i++){
@@ -65,11 +84,13 @@ const page = () => {
         </div>
         <div className='flex flex-wrap justify-evenly gap-4 p-4 lg:px-40 lg:pt-8 lg:gap-16'>
         {
+        articleData.length>0 ?
           articleData.map(
             (currArticle) => (
               <ArticleCard key={currArticle.id} {...{...currArticle,totalData}}/>
             )
-          )
+          ):
+          <div className="text-2xl p-8 font-bold font-sans">No Articles here ...</div>
         }
         </div>
         <div className="flex gap-4 justify-center items-center p-10">
