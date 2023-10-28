@@ -1,4 +1,4 @@
-import Events from '@/app/events/events'
+import Events from '@/app/events/Events'
 
 export const metadata ={
   title:'EVENTS',
