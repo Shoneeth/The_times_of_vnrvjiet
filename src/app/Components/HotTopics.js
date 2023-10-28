@@ -61,7 +61,7 @@ const HotTopics = () => {
             
             articles.map((article, index) => (
               (index >= 0 && index < 4) &&
-              <div className="flex flex-col justify-center items-center md:w-44 lg:w-52">
+              <div key={index} className="flex flex-col justify-center items-center md:w-44 lg:w-52">
                 <div className="overflow-hidden rounded-md w-70 h-40 md:w-44 lg:w-52 md:h-32">
                   <Image
                     src={article.img}

@@ -86,7 +86,7 @@ const Latest = () => {
             {articles.length>0?
             articles.map((article, index) => (
               (index > 0 && index < 4) &&
-              <div className="flex flex-wrap justify-center lg:flex-nowrap overflow-hidden">
+              <div key={index} className="flex flex-wrap justify-center lg:flex-nowrap overflow-hidden">
                 <div className="overflow-hidden rounded-md p-4 md:p-0 w-fit h-fit md:w-56 md:h-28">
                   <Image
                     src={article.img}
