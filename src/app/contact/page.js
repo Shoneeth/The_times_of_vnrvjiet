@@ -3,7 +3,9 @@ import Navbar from "../Components/Navbar"
 import { PiMapPinBold } from 'react-icons/pi';
 import FollowUs from "../Components/FollowUs";
 
-
+export const metadata ={
+  title:'CONTACT US',
+}
 
 const page = () => {
   return (

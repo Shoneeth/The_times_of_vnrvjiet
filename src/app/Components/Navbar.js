@@ -35,7 +35,7 @@ const Navbar = () => {
           <CgClose className={`w-6 h-6 text-gray-400 font-bold cursor-pointer lg:relative lg:left-10 lg:top-7 lg:w-9 lg:h-9 ${toggle ? '' : 'hidden'}`} title="close" onClick={handleOnClick} />
           <CgMenu className={`w-6 h-6 text-gray-400 font-bold cursor-pointer lg:relative lg:left-10 lg:top-7 lg:w-9 lg:h-9 ${toggle ? 'hidden' : ''}`} alt="Picture of the menu" onClick={handleOnClick} title="Menu" />
         </div>
-        <Link href='/home'>
+        <Link href='/'>
         <div className=" flex flex-col items-center lg:flex-row lg:justify-center">
           <div className="logo w-16 p-2 lg:w-24">
             <Image

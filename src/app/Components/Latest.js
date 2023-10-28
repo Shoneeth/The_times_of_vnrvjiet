@@ -11,7 +11,7 @@ const Latest = () => {
   const [articles, setArticles] = useState([])
 
   const getData= async()=>{
-    let response =  await fetch(`http://192.168.137.92:8080/diurnalis/latestarticles`);
+    let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/latestarticles`);
     setArticles(await response.json());
   }
 
@@ -72,7 +72,7 @@ const Latest = () => {
               <span className={`${" text-white px-2 py-1 rounded-md text-sm lg:text-base font-medium capitalize"}
                 ${getClass(articles[0].category)}
                 }`}>{articles[0].category}</span>
-              <Link href={`/articles/${articles[0].id}?title=${articles[0].title}`}>
+              <Link href={`/articles/${articles[0].id}?category=${articles[0].category}&id=${articles[0].id}&title=${articles[0].title}`}>
                 <h1 className=" text-sm md:text-2xl font-sans capitalize text-white font-bold py-2 hover:underline" onClick={()=>articleDispatch(articles[0])}>{`${articles[0].title.substring(0,55)}${articles[0].title.length>55 ? '...' : ''}`}</h1>
               </Link>
               <div className="flex items-center gap-4 px-2">
@@ -100,7 +100,7 @@ const Latest = () => {
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
                 ${getClass(article.category)}
                 }`}>{article.category}</span>
-                  <Link href={`/articles/${article.id}?title=${article.title}`}>
+                  <Link href={`/articles/${article.id}?category=${article.category}&id=${article.id}&title=${article.title}`}>
                     <h1 className="text-sm md:text-base font-sans capitalize text-black font-bold px-2 md:px-0 py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
                   <div className="flex items-center gap-4 px-2">

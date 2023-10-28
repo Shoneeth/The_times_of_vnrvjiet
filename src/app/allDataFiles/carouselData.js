@@ -1,65 +1,16 @@
 export const carouselData = [{
-      id: 1,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},
-{
-      id: 2,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},
-{
-      id: 3,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},
-{
-      id: 4,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},
-{
-      id: 5,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
+      carousalId: 0,
+      carousalImg: '/Carouselimages/defaultImg.png',
+      desc: 'the times of VNRVJIET-Diurnalis',
+      link: '#'
 },{
-      id: 6,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
+      carousalId: 0,
+      carousalImg: '/Carouselimages/defaultImg.png',
+      desc: 'the times of VNRVJIET-Diurnalis',
+      link: '#'
 },{
-      id: 7,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},{
-      id: 8,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},{
-      id: 9,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},{
-      id: 19,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},{
-      id: 10,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},{
-      id: 11,
-      imgURL: '/Carouselimages/sample.jpg',
-      description: 'asdfghjkljhgfdsdfghj asdfghjgfdsa SERDTYUYERWQE xcvbnbfdDFGB ',
-      externalLink: 'https://vnrvjiet.ac.in',
-},]
+      carousalId: 0,
+      carousalImg: '/Carouselimages/defaultImg.png',
+      desc: 'the times of VNRVJIET-Diurnalis',
+      link: '#'
+}]

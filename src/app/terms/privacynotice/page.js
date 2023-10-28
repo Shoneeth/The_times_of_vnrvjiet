@@ -1,6 +1,11 @@
 import Footer from "@/app/Components/Footer"
 import Navbar from "@/app/Components/Navbar"
 import { doc } from "./doc"
+
+export const metadata ={
+  title:'PRIVACY NOTICE',
+}
+
 const page = () => {
   return (
     <>

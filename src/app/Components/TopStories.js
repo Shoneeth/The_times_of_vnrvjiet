@@ -13,7 +13,7 @@ const TopStories = () => {
       const [articles, setArticles] = useState([])
 
       const getData= async()=>{
-        let response =  await fetch(`http://192.168.137.92:8080/diurnalis/hottopics`);
+        let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/hottopics`);
         setArticles(await response.json());
       }
     
@@ -76,7 +76,7 @@ const TopStories = () => {
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
                 ${getClass(article.category)}
             `}>{article.category}</span>
-                  <Link href={`/articles/${article.id}?title=${article.title}`}>
+                  <Link href={`/articles/${article.id}?category=${article.category}&id=${article.id}&title=${article.title}`}>
                     <h1 className="text-sm font-sans capitalize text-black font-bold py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
                   <div className="flex items-center gap-4 px-2">

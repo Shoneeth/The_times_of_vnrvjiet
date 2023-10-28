@@ -92,7 +92,6 @@ const Footer = () => {
                                           <li key={'61'} className="hover:underline hover:ease-in-out"><Link href="/terms/termsofuse">TERMS OF USE</Link></li>
                                     </ul>
                               </div>
-                              {/*this newsLetter is temp , it may need backend to function*/}
                               <div className="newsLetter font-sans p-8 w-[90vw] lg:w-96 lg:p-4">
                                     <h1 className="text-2xl font-semibold text-center py-4 lg:py-0 lg:pb-4">Subscribe For Newsletter</h1>
                                     <form className="NL text-black bg-white rounded-2xl p-4 lg:p-8" method="POST" action="" name="newsletter_form" onSubmit={handleSubmit}>
@@ -101,7 +100,7 @@ const Footer = () => {
                                           {submit ? <div className="thanks text-center text-green-600 font-semibold py-6">Thank you for Subscribing...</div> :
                                                 <div className="flex flex-col p-4">
                                                       <input className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-auto rounded-md md:text-base focus:ring-1" type='email' name='email' placeholder='Email Address' required></input>
-                                                      <button className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-2 w-28 self-center" type='submit'>Subscribe</button>
+                                                      <button className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-2 w-28 self-center" type='submit'>Subscribe</button>
                                                 </div>
                                           }
                                     </form>

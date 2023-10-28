@@ -21,7 +21,7 @@ const Navpage = () => {
     <>
     <div className="flex flex-col lg:flex-row bg-white shadow-md justify-between px-5">
       <ul className=" flex flex-col p-4 px-6 text-lg font-semibold lg:flex-row lg:space-x-8 lg:px-10 bg-white">
-        <li key={'1'} className="hover:text-red-700"><Link href="/home" > Home</Link></li>
+        <li key={'1'} className="hover:text-red-700"><Link href="/" > Home</Link></li>
         <li key={'2'} className="hover:text-red-700"><Link href="/articles?category=Academics&page=1">Categories of Articles</Link></li>
         <li key={'3'} className="hover:text-red-700"><Link href="/events" > Events</Link></li>
         <li key={'4'} className="hover:text-red-700"><Link href="/about" > About Us</Link></li>
