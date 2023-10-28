@@ -40,6 +40,7 @@ const CarouselComponent = () => {
                   <Carousel centerMode centerSlidePercentage={90} showIndicators={false} stopOnHover={true} showArrows={true}  infiniteLoop autoPlay transitionTime={500} showThumbs={false} showStatus={false} swipeable={true} useKeyboardArrows>
 
                         {images.length <0?<div/>:images.map((image,index) => (
+                              <div key={index}>
                               <Link href={image.link} target='_blank'>
                               <div key={index} className='carouselBox'>
                                     <Image
@@ -51,6 +52,7 @@ const CarouselComponent = () => {
                                     />
                               </div>
                               </Link>
+                              </div>
                         ))}
                   </Carousel>
                   <div className='carouselmt'></div>

@@ -36,11 +36,13 @@ const Category = () => {
                         <Link href="/articles?category=Academics&page=1"><h1 className="text-3xl font-sans font-bold w-min hover:underline">Categories</h1></Link>
                         <div className="flex flex-wrap gap-4 p-4 px-6">
                               {Categories.map((category,index)=>(
+                                <div key={index}>
                                     <Link href={`/articles?category=${category}&page=1`}>
                                     <div key={index} className={`${"lg:w-[22vw] h-16 bg-slate-400 text-center text-lg rounded-lg text-slate-50 font-semibold p-4 tracking-wider font-sans capitalize hover:scale-105"} ${getClass(category)}`}>
                                           {category}
                                     </div>
                                     </Link>
+                                  </div>
                               ))}
                         </div>
                   </section>
