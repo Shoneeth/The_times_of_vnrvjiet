@@ -4,6 +4,9 @@ import { doc } from "./doc"
 
 export const metadata ={
   title:'ACCEPTABLE USE POLICY',
+  alternates: {
+    canonical: 'https://diurnalis.in',
+  },
 }
 
 const page = () => {

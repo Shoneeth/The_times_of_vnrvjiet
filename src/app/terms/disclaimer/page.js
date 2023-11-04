@@ -4,6 +4,9 @@ import { doc } from "./doc"
 
 export const metadata ={
   title:'DISCLAIMER',
+  alternates: {
+    canonical: 'https://diurnalis.in',
+  },
 }
 
 
