@@ -15,6 +15,9 @@ export const metadata = {
   description: 'THE TIMES OF VNRVJIET is the site of Diurnalis a Student-led,Faculty-advised and Management-monitored Student Publication Community in the Campus of VNRVJIET.',
   keywords: ['nextjs', 'react', 'javascript','VNRVJIET','Diurnalis','THE TIMES OF VNRVJIET','journalism','hyderabad','club','news','articles'],
   author:'diurnalis-Tech Team',
+  alternates: {
+    canonical: 'https://diurnalis.in',
+  },
 }
 
 export default function RootLayout({ children }) {

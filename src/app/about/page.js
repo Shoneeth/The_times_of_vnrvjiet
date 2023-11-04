@@ -2,6 +2,9 @@ import About from "./About"
 
 export const metadata ={
   title:'ABOUT US',
+  alternates: {
+    canonical: 'https://diurnalis.in',
+  },
 }
 
 const page = () => {

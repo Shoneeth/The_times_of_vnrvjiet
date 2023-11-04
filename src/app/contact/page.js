@@ -5,6 +5,9 @@ import FollowUs from "../Components/FollowUs";
 
 export const metadata ={
   title:'CONTACT US',
+  alternates: {
+    canonical: 'https://diurnalis.in',
+  },
 }
 
 const page = () => {
