@@ -11,7 +11,7 @@ const Latest = () => {
   const [articles, setArticles] = useState([])
 
   const getData= async()=>{
-    let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/latestarticles`);
+    let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/latestarticles`);
     setArticles(await response.json());
   }
 
@@ -62,7 +62,7 @@ const Latest = () => {
        { articles.length>0?
           <div className=" overflow-hidden rounded-md relative my-4 w-[90vw] h-[50vw] md:h-[40vw] lg:w-[35vw] lg:h-[30vw]">
             <Image
-              src={articles[0].img}
+              src={articles[0].img===''?'/articleImages/default.img.png':articles[0].img}
               height={1500}
               width={1500}
               alt={articles[0].title}
@@ -89,7 +89,7 @@ const Latest = () => {
               <div key={index} className="flex flex-wrap justify-center lg:flex-nowrap overflow-hidden">
                 <div className="overflow-hidden rounded-md p-4 md:p-0 w-fit h-fit md:w-56 md:h-28">
                   <Image
-                    src={article.img}
+                    src={article.img===''?'/articleImages/default.img.png':article.img}
                     height={100}
                     width={500}
                     alt={article.title}

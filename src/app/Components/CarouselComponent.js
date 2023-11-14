@@ -14,7 +14,7 @@ const CarouselComponent = () => {
 
       const getData= async()=>{
             try{
-            let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/carousalimages`);
+            let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/carousalimages`);
             const result= await response.json()
             // console.log(result.length);
             if(response.status===200 && result.length > 0)
@@ -41,11 +41,11 @@ const CarouselComponent = () => {
 
                         {images.length <0?<div/>:images.map((image,index) => (
                               <div key={index}>
-                              <Link href={image.link} target='_blank'>
+                              <Link href={image.link===null?'#':image.link} target='_blank'>
                               <div key={index} className='carouselBox'>
                                     <Image
                                           src={image.carousalImg}
-                                          alt={image.desc}
+                                          alt={image.desc===null?'':image.desc}
                                           width={1920}
                                           height={400}  
                                           className='carouselImage'   

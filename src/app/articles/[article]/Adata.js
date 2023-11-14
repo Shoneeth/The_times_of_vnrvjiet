@@ -19,7 +19,7 @@ const Adata = () => {
 
   const getData= async()=>{
     // console.log(currArticle);
-    let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/article?category=${categoryParam}&id=${idParam}`);
+    let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/article?category=${categoryParam}&id=${idParam}`);
     setCurrArticle(await response.json());
     // console.log(currArticle)
   
@@ -77,7 +77,7 @@ const Adata = () => {
         </div>
         <div className="flex flex-col text-xs text-gray-400 capitalize text-center py-4">
         <div className="overflow-hidden">
-          <Image src={currArticle.img}
+          <Image src={currArticle.img===''?'/articleImages/default.img.png':currArticle.img}
           width={1500}
           height={1500}
           alt={currArticle.imgDesc}

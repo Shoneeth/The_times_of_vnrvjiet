@@ -25,7 +25,7 @@ const ArticleCard = (currArticle) => {
                   <div className="bg-white flex flex-col border border-separate rounded-lg w-fit items-center shadow-lg md:w-[40vw] lg:w-[20vw] overflow-hidden">
                         <div className="overflow-hidden rounded-t-lg ">
                               <Image
-                                    src={currArticle.img}
+                                    src={currArticle.img===''?'/articleImages/default.img.png':currArticle.img}
                                     alt={currArticle.title}
                                     width={500}
                                     height={500}

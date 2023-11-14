@@ -18,10 +18,10 @@ const ArticlesPage = () => {
   const [totalData,setTotalData] = useState(0);
 
   const getData= async()=>{
-    let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/articles?pageNum=${Number(pageParam)}&pageSize=${Number(dataPerPage)}&category=${categoryParam}`);
+    let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/articles?pageNum=${Number(pageParam)}&pageSize=${Number(dataPerPage)}&category=${categoryParam}`);
     setArticleData(await response.json());
 
-    let total =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/totalsize?category=${categoryParam}`);
+    let total =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/totalsize?category=${categoryParam}`);
     setTotalData(await total.json());
   }
 

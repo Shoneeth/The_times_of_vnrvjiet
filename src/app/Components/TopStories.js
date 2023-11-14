@@ -13,7 +13,7 @@ const TopStories = () => {
       const [articles, setArticles] = useState([])
 
       const getData= async()=>{
-        let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/hottopics`);
+        let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/hottopics`);
         setArticles(await response.json());
       }
     
@@ -65,7 +65,7 @@ const TopStories = () => {
               <div key={index} className="flex py-3 lg:py-1 items-center">
                 <div className=" flex items-center overflow-hidden w-64 md:w-32 h-28 md:h-24 rounded-[20%]">
                   <Image
-                    src={article.img}
+                    src={article.img===''?'/articleImages/default.img.png':article.img}
                     height={100}
                     width={500}
                     alt={article.title}
