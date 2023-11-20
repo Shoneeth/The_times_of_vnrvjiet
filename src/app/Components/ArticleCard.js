@@ -34,7 +34,7 @@ const ArticleCard = (currArticle) => {
                         </div>
                         <div className="p-4">
                               <p className="text-gray-500 font-medium text-sm font-sans py-2 md:text-lg">{currArticle.category}</p>
-                              <h1 className="font-medium capitalize py-2 md:font-semibold md:text-xl hover:underline">{currArticle.title}</h1>
+                              <h1 className="font-medium capitalize py-2 md:font-semibold md:text-xl hover:underline">{`${currArticle.title.substring(0,40)}${currArticle.title.length>40 ? '...' : ''}`}</h1>
                               <div className="flex items-center gap-4 px-2">
                                     <p className="text-gray-500 font-medium text-xs font-sans">BY <span className="text-black uppercase">{`${currArticle.author.substring(0,10)}${currArticle.author.length>10 ? '...' : ''}`}</span></p>
                                     <div className="flex items-center gap-2 text-gray-500 font-sans font-medium text-xs flex-wrap"><BiCalendar />{currArticle.date}</div>
