@@ -68,7 +68,7 @@ const Adata = () => {
     <>
       <Navbar/>
       <div className="flex flex-wrap">
-      <div className="bg-white border shadow-lg m-4 md:m-10 lg:ml-16 lg:mt-16 p-6 lg:w-[60vw]">
+      <div className="bg-white border w-11/12 shadow-lg m-4 md:m-10 lg:ml-16 lg:mt-16 p-6 lg:w-[60vw]">
         <h1 className="text-lg md:text-3xl text-black font-bold font-sans md:tracking-wider uppercase hover:underline text-justify">{currArticle.title}</h1>
         <div className="flex items-center text-gray-500 gap-2 px-4 pt-2 text-sm font-medium"><BiCalendar/><p>{currArticle.date}</p></div>
         <div className="flex items-center justify-between text-sm font-sans font-medium capitalize text-gray-500">
