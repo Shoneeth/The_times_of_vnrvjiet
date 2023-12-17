@@ -49,3 +49,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ![Screenshot (657)](https://github.com/Shoneeth/The_times_of_vnrvjiet/assets/76730871/6b2b951d-9629-4601-bb98-d9abacedf1e0)
 ![Screenshot (658)](https://github.com/Shoneeth/The_times_of_vnrvjiet/assets/76730871/ea013d21-f0fa-429e-bfb6-f85b641ec03d)
 
+
+https://github.com/Shoneeth/The_times_of_vnrvjiet/assets/76730871/ad1ddbc3-d9c9-46e5-b898-d12f8ef3622c
+
+
