@@ -17,16 +17,16 @@ const Adata = () => {
   const categoryParam = Params.get('category')
   const [currArticle,setCurrArticle] = useState(useSelector((data)=>data.article))
 
-  const getData= async()=>{
-    // console.log(currArticle);
-    let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/article?category=${categoryParam}&id=${idParam}`);
-    setCurrArticle(await response.json());
-    // console.log(currArticle)
+  // const getData= async()=>{
+  //   // console.log(currArticle);
+  //   let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/article?category=${categoryParam}&id=${idParam}`);
+  //   setCurrArticle(await response.json());
+  //   // console.log(currArticle)
   
-  }
+  // }  // commented for demo frontend
 
   useEffect(()=>{
-    getData()
+    // getData() // commented for demo frontend
   },[])
 
   // console.log(currArticle);
@@ -73,22 +73,24 @@ const Adata = () => {
         <div className="flex items-center text-gray-500 gap-2 px-4 pt-2 text-sm font-medium"><BiCalendar/><p>{currArticle.date}</p></div>
         <div className="flex items-center justify-between text-sm font-sans font-medium capitalize text-gray-500">
           <p className="px-4 py-3">by: {currArticle.author}</p>
-          <p className="px-4 py-3">Editor: {currArticle.approvedBy}</p>
+          <p className="px-4 py-3">Editor: {//currArticle.approvedBy  // changed for demo
+            currArticle.uploadedBy 
+            }</p>
         </div>
         <div className="flex flex-col text-xs text-gray-400 capitalize text-center py-4">
         <div className="overflow-hidden">
-          <Image src={currArticle.img===''?'/articleImages/default.img.png':currArticle.img}
+          <Image src={currArticle.imgMainURL===''?'/articleImages/default.img.png':currArticle.imgMainURL} // changed currArticle.img
           width={1500}
           height={1500}
-          alt={currArticle.imgDesc}
+          alt={currArticle.imgSmURL} // changed currArticle.imgDesc
           className='object-cover'
           />
         </div>
-          {`${currArticle.imgDesc} | Photo credits: ${currArticle.imgCredits}`}
+          {`${currArticle.imgSmURL} | Photo credits: ${currArticle.imgCredits}`}
         </div>
         <div className="px-4 py-2 md:px-8 md:py-4 text-justify text-base md:text-lg" dangerouslySetInnerHTML={{__html:`${currArticle.description}`}}>
         </div>
-        <div className="text-end"><Link href={`/articles?category=${currArticle.category!==undefined?currArticle.category:'Academics'}&page=1`}><button className="px-4 py-2 font-mono text-red-900 hover:scale-105"> More Articles --{`>`}</button></Link></div>
+        <div className="text-end"><Link href={`/articles?category=${currArticle.Category!==undefined?currArticle.Category:'Academics'}&page=1`}><button className="px-4 py-2 font-mono text-red-900 hover:scale-105"> More Articles --{`>`}</button></Link></div>
       </div>
       <div className="w-full lg:my-14 lg:w-[30vw]">
         <FollowUs/>

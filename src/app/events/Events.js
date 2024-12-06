@@ -1,5 +1,6 @@
 'use client'
 import planning from "@/app/planning.json"
+// import planning from "https://drive.google.com/file/d/1ONbDGRJmzdSGxS3hvdrR1zgbNVKptZhJ/view"
 import Lottie from "lottie-react"
 import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"

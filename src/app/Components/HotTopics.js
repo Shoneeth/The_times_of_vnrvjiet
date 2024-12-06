@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-// import { articleData } from "../allDataFiles/articleData"
+import { articleData } from "../allDataFiles/articleData" // uncommented for demo
 import { BiCalendar } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -10,10 +10,10 @@ import { getArticle } from "../redux/slice";
 const HotTopics = () => {
       const [articles, setArticles] = useState([])
 
-      const getData= async()=>{
-        let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/hottopics`);
-        setArticles(await response.json());
-      }
+      // const getData= async()=>{
+      //   let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/hottopics`);
+      //   setArticles(await response.json());
+      // } // commented for demo
     
 
       
@@ -25,8 +25,8 @@ const HotTopics = () => {
 
   useEffect(() => {
     // console.log(carouselData);
-    getData()
-    // setArticles(articleData);
+    // getData()
+    setArticles(articleData);
   }, []);
 
   const getClass = (key) => {
@@ -64,7 +64,7 @@ const HotTopics = () => {
               <div key={index} className="flex flex-col justify-center items-center md:w-44 lg:w-52">
                 <div className="overflow-hidden rounded-md w-70 h-40 md:w-44 lg:w-52 md:h-32">
                   <Image
-                    src={article.img===''?'/articleImages/default.img.png':article.img}
+                    src={article.imgMainURL===''?'/articleImages/default.img.png':article.imgMainURL}
                     height={100}
                     width={500}
                     alt={article.title}
@@ -73,9 +73,9 @@ const HotTopics = () => {
                 </div>
                 <div className="px-3 py-4">
                   <span className={`${" text-xs text-white px-2 py-1 rounded-md font-medium capitalize"}
-                ${getClass(article.category)}
-                }`}>{article.category}</span>
-                  <Link href={`/articles/${article.id}?category=${article.category}&id=${article.id}&title=${article.title}`}>
+                ${getClass(article.Category)}
+                }`}>{article.Category}</span>
+                  <Link href={`/articles/${article.id}?category=${article.Category}&id=${article.id}&title=${article.title}`}>
                     <h1 className="text-sm lg:text-base font-sans capitalize text-black font-bold py-2 hover:underline" onClick={()=>articleDispatch(article)}>{`${article.title.substring(0,55)}${article.title.length>55 ? '...' : ''}`}</h1>
                   </Link>
                   <div className="flex items-center gap-2 px-1 lg:gap-4 lg:px-2">

@@ -14,7 +14,7 @@ const CarouselComponent = () => {
 
       const getData= async()=>{
             try{
-            let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/carousalimages`);
+            let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/carousalimages`);
             const result= await response.json()
             // console.log(result.length);
             if(response.status===200 && result.length > 0)

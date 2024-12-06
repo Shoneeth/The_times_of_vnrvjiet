@@ -3,7 +3,7 @@ import { useEffect, useState} from 'react';
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import ArticleCard from '../Components/ArticleCard';
-// import { articleData } from '../allDataFiles/articleData';
+import { articleData } from '../allDataFiles/articleData'; // uncommented for frontend demo
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
@@ -14,20 +14,26 @@ const ArticlesPage = () => {
   const categoryParam = Params.get('category')
   const pageParam = Params.get('page')
 
-  const [articleData,setArticleData] = useState([]);
+  // const [articleData,setArticleData] = useState([]); // commented for demo frontend
   const [totalData,setTotalData] = useState(0);
 
-  const getData= async()=>{
-    let response =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/articles?pageNum=${Number(pageParam)}&pageSize=${Number(dataPerPage)}&category=${categoryParam}`);
-    setArticleData(await response.json());
+  // const getData= async()=>{
+  //   let response =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/articles?pageNum=${Number(pageParam)}&pageSize=${Number(dataPerPage)}&category=${categoryParam}`);
+  //   setArticleData(await response.json());
 
-    let total =  await fetch(`https://backend.diurnalis.in:8080/diurnalis/totalsize?category=${categoryParam}`);
-    setTotalData(await total.json());
-  }
+  //   // let response =  await fetch(`https://drive.google.com/file/d/1ONbDGRJmzdSGxS3hvdrR1zgbNVKptZhJ/view?usp=sharing`);
+  //   // setArticleData(await response.json());
+    
+  //   // console.log(response);
+
+  //   let total =  await fetch(`https://diurnalis-backend.onrender.com/diurnalis/totalsize?category=${categoryParam}`);
+  //   setTotalData(await total.json());
+  // }  //commented for demo frontend
 
 
   useEffect( ()=>{
-    getData()
+    // getData()
+    setTotalData(21)
   },[categoryParam,pageParam])
 
   
